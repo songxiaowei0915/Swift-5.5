@@ -99,3 +99,16 @@ enum Preparation {
     case ingredient(Food)
     case device
 }
+
+struct Vegetable: Hashable {
+    let name: String
+}
+
+let veggiesInStore: Set<String> = [
+    "cucumber","celery","cauliflower",
+    "eggplant", "cabbage"
+]
+
+enum StoreError: Error {
+    case outOfStock
+}
