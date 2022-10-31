@@ -211,6 +211,34 @@ public struct MakeDinner {
             }catch {
                 print("All vegetables are out of stock.")
             }
+            
+//            let account11 = BankAccount(number: 11, balance: 100)
+//            await withTaskGroup(of:Void.self) { group in
+//                group.addTask {
+//                    print(await account11.deposit(amount: 100))
+//                }
+//                
+//                group.addTask {
+//                    print(await account11.deposit(amount: 100))
+//                }
+//            }
+            
+            let boxueAccount = BankAccount(number: 1110, balance: 100,
+                                           owners: [Person(name: "10"), Person(name: "11")])
+            
+//            Task.detached {
+//                let account = await boxueAccount.primaryOwner()
+//                account.name = "bx10"
+//            }
+//
+//            Task.detached {
+//                let account = await boxueAccount.primaryOwner()
+//                account.name = "BX10"
+//            }
+            
+            let bank = Bank()
+            _ = bank.filterAccount { $0.number != 11}
+            _ = bank.filterAccount { $0.number == boxueAccount.number }
         }
         
 //        buyVegetable(shoppingList: ["celery", "eggplant", "cauliflower"], onAllAvailable: {
